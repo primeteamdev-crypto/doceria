@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 50% 97%;
+    --foreground: 20 25% 15%;
+
+    --card: 30 40% 98%;
+    --card-foreground: 20 25% 15%;
+
+    --popover: 30 40% 98%;
+    --popover-foreground: 20 25% 15%;
+
+    --primary: 35 72% 44%;
+    --primary-foreground: 40 100% 98%;
+
+    --secondary: 350 30% 94%;
+    --secondary-foreground: 20 25% 15%;
+
+    --muted: 30 25% 93%;
+    --muted-foreground: 20 10% 45%;
+
+    --accent: 20 45% 22%;
+    --accent-foreground: 40 100% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 35 72% 44%;
+
+    --radius: 0.75rem;
+
+    --gold: 42 80% 55%;
+    --gold-soft: 42 60% 78%;
+    --cream: 35 60% 95%;
+    --chocolate: 20 35% 20%;
+    --chocolate-light: 20 20% 35%;
+    --rose: 345 40% 80%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 20 25% 8%;
+    --foreground: 30 30% 92%;
+    --card: 20 25% 10%;
+    --card-foreground: 30 30% 92%;
+    --popover: 20 25% 10%;
+    --popover-foreground: 30 30% 92%;
+    --primary: 35 72% 50%;
+    --primary-foreground: 20 25% 8%;
+    --secondary: 20 20% 16%;
+    --secondary-foreground: 30 30% 92%;
+    --muted: 20 20% 16%;
+    --muted-foreground: 30 15% 60%;
+    --accent: 35 50% 30%;
+    --accent-foreground: 30 30% 92%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 20 20% 18%;
+    --input: 20 20% 18%;
+    --ring: 35 72% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  /* Scroll Reveal */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  .scroll-reveal-left.revealed {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Parallax */
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+
+  @supports (-webkit-overflow-scrolling: touch) {
+    .parallax-bg {
+      background-attachment: scroll;
+    }
+  }
+}
